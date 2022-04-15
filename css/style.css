@@ -1,5 +1,152 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla';
+}
+
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(230, 239, 246);
     font-family: 'Karla', sans-serif;
+    color: white;
+}
+
+.container {
+    overflow: hidden;
+    margin: 20px 35px;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px 2px rgba(138, 145, 150, .3);
+}
+
+.card {
+    padding: 30px 20px;
+}
+
+.card .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.card .subtitle {
+    font-size: 16px;
+}
+
+.card .description {
+    font-size: 14px;
+}
+
+.card--join-community {
+    background-color: white;
+}
+
+.card--join-community .title {
+    color: rgb(43, 179, 177);
+}
+
+.card--join-community .subtitle {
+    margin: 20px 0;
+    color: rgb(188, 228, 10);
+}
+
+.card--join-community .description {
+    color: rgb(179, 170, 170);
+    line-height: 180%;
+}
+
+.card--subscription {
+    background-color: rgb(43, 179, 177);
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    /* display: table; */
+    margin-bottom: 0px;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.price span {
+    /* display: table-cell;
+    vertical-align: middle; */
+    margin: 20px 0;
+    font-weight: 400;
+    font-size: 16px;
+    margin-left: 10px;
+    color: rgba(255, 255, 255, .4)
+}
+
+.card--subscription .subtitle {
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, .8)
+}
+
+.card--subscription button {
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgb(188, 228, 10);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 13px 25px 2px rgb(31, 138, 136);
+    transition: .25s linear;
+    cursor: pointer;
+}
+
+.card--subscription button:hover {
+    background-color: rgb(167, 202, 11);
+}
+
+.card--whyus {
+    background-color: rgb(74, 190, 189);
+}
+
+.card--whyus ul {
+    list-style: none;
+    line-height: 150%;
+    color: rgba(255, 255, 255, .75)
+}
+
+@media (min-width: 640px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "join join"
+            "suba whyus";
+        max-width: 700px;
+    }
+
+    .card {
+        padding: 35px 40px;
+    }
+
+    .card:first-child .title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .card:nth-child(n+2) .title {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .card--join-community {
+        grid-area: join;
+    }
+
+    .card--subscription {
+        grid-area: suba;
+    }
+
+    .card--whyus {
+        grid-area: whyus;
+    }
 }
